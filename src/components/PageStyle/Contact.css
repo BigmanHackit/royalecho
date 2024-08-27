@@ -1,0 +1,14 @@
+.contact-intro {
+    width: 60%;
+    margin: 100px auto;
+    margin-bottom: 100px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    color: whitesmoke;
+    background-color: #11111169;
+    border: 1px solid #f8e783ea;
+    border-radius: 10px;
+  }

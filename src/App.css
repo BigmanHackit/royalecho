@@ -1,0 +1,13 @@
+.body {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  color: #fbf4cbea;
+  top: 3%;
+  box-sizing: border-box;
+  background: linear-gradient(145deg, #020255, #111111);  
+}

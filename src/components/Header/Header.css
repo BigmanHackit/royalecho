@@ -1,0 +1,37 @@
+header {
+    width: 100vw;
+    position: fixed;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    z-index: 10;
+    background-color: #020244;
+    box-shadow: 0px 4px 24px #111;
+    /* border: 1px solid red; */
+}
+header a {
+    width: 15%;
+}
+header a img {
+    width: 80%;
+}
+header ul {
+    width: 30%;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+/* header ul li {
+    list-style: none;
+} */
+header ul a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #f8e783ce;
+}
+.li{
+    color: #fff;
+    font-size: 40px;
+
+}

@@ -1,0 +1,18 @@
+.page-details {
+    width: 40vw;
+    margin: 300px auto;
+    margin-right: 900px;
+    margin-bottom: 400px;
+    padding: 0 30px;
+    /* border: 1px solid red; */
+    color: #f8e783ce;
+    text-align: left;
+}
+.page-details h1 {
+    font-size: 60px;
+}
+.page-details h2 {
+    font-size: 20px;
+    margin-top: 30px;
+    color: white;
+}

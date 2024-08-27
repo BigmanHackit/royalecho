@@ -1,0 +1,14 @@
+.float-btn {
+    width: 5vw;
+    height: 10vh;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    /* border: 1px solid red; */
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.float-btn img{
+    width: 100%;
+}

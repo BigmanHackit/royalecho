@@ -1,0 +1,21 @@
+/* @import url('') */
+
+.board--body {
+    background: linear-gradient(145deg, #020255, #111111); 
+    padding: 20px;
+}
+.dashboard {
+    display: flex;
+    gap: 20px;
+    align-self: center;
+    justify-self: center;
+}
+.dashboard--content {
+    background: #fff;
+    flex: 1;
+    padding: 2rem;
+    border-radius: 20px;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+}

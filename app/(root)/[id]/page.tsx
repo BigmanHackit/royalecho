@@ -4,9 +4,9 @@ import { BookAudio, CalendarCheck, Clock10, Video } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
-interface PageProps {
-  params: { id: string };
-}
+// interface PageProps {
+//   params: { id: string };
+// }
 
 async function getCourseById(courseId: string) {
   const res = await fetch(`http://localhost:3000/api/courses/${courseId}`, {
@@ -24,7 +24,9 @@ async function getCourseById(courseId: string) {
 
 export default async function CourseDetailsPage({
   params,
-}: PageProps) {
+}: {
+  params: Promise<{ id: string }>
+}) {
   try {
     const course = await getCourseById(params.id);
 

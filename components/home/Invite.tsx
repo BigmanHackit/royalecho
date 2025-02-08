@@ -6,7 +6,7 @@ const Invite = () => {
   return (
     <MaxWidthWrapper className="bg-gradient-to-b from-stone-50 to-stone-200 py-6 px-4 rounded border">
       <h1 className="font-bold text-3xl lg:text-center md:text-center">
-        Apply for the course you've dreamed of for long
+        Apply for the course you&apos;ve dreamed of for long
       </h1>
       <hr className="w-1/2 mx-auto border-2 rounded-full border-[#687619] mt-1" />
       <p className="my-8">

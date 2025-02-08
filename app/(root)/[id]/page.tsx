@@ -7,6 +7,7 @@ import React from "react";
 interface PageProps {
   params: { id: string };
 }
+
 async function getCourseById(courseId: string) {
   const res = await fetch(`http://localhost:3000/api/courses/${courseId}`, {
     method: "GET",
@@ -21,7 +22,9 @@ async function getCourseById(courseId: string) {
   return data;
 }
 
-const CourseDetailsPage = async ({ params }: PageProps) => {
+export default async function CourseDetailsPage({
+  params,
+}: PageProps) {
   try {
     const course = await getCourseById(params.id);
 
@@ -119,5 +122,3 @@ const CourseDetailsPage = async ({ params }: PageProps) => {
     return <div>Error fetching course</div>;
   }
 };
-
-export default CourseDetailsPage;

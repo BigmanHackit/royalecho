@@ -1,16 +1,46 @@
-import React from 'react'
-import MaxWidthWrapper from '../layout/MaxWidthWrapper'
-import { EmblaCarousel } from '../shared/Carousel'
+import React from "react";
+import MaxWidthWrapper from "../layout/MaxWidthWrapper";
+import { EmblaCarousel } from "../shared/Carousel";
+import ShinyText from "../ui/ShinyText";
 
 export const HomeBilboard = () => {
   return (
-    <MaxWidthWrapper className='my-8 w-full'>
-        <EmblaCarousel>
-          <div className="embla__slide flex items-center justify-center rounded-lg text-gray-100 bg-gradient-to-br from-[#141E30] to-[#243B55]">Slide 1</div>
-        <div className="embla__slide flex items-center justify-center rounded-lg text-gray-100 bg-gradient-to-br from-[#000428] to-[#004e92]">Slide 2</div>
-        <div className="embla__slide flex items-center justify-center rounded-lg text-gray-100 bg-gradient-to-br from-[#2C3E50] to-[#4CA1AF]">Slide 3</div>
-        <div className="embla__slide flex items-center justify-center rounded-lg text-gray-100 bg-gradient-to-br from-[#cb2d3e] to-[#ef473a]">Slide 4</div>
-        </EmblaCarousel>
+    <MaxWidthWrapper className="my-8 w-full h-[50vh] bg-black py-2.5 rounded-lg md:flex md:gap-6 text-gray-100">
+      <div className="w-full flex flex-col justify-center gap-3">
+  <ShinyText text="Welcome to RoyalEcho Academy!" disabled={false} speed={3} className='custom-class font-extrabold text-5xl' />
+        <h1 className="font-extrabold text-5xl">
+        
+        </h1>
+        <h2>
+          Welcome to RoyalEcho Academy—where learning goes beyond the classroom!
+          We don’t just teach tech; we make you practice and work with
+          real-world projects. Join us and transform from a learner to a job-ready tech
+          professional!{" "}
+        </h2>
+      </div>
+
+      <EmblaCarousel className="hidden lg:block h-[90%] w-full my-auto">
+        <div className="embla__slide flex items-center justify-center rounded-lg bg-gradient-to-br from-[#141E30] to-[#243B55]">
+          <h1 className="font-extrabold text-5xl">
+            <span className="text-red-">LEARN</span>
+          </h1>
+        </div>
+        <div className="embla__slide flex items-center justify-center rounded-lg bg-gradient-to-br from-[#000428] to-[#004e92]">
+          <h1 className="font-extrabold text-5xl">
+            <span className="text-yellow-">PRACTICE</span>
+          </h1>
+        </div>
+        <div className="embla__slide flex items-center justify-center rounded-lg bg-gradient-to-br from-[#2C3E50] to-[#4CA1AF]">
+          <h1 className="font-extrabold text-5xl">
+            <span className="text-green-">EARN</span>
+          </h1>
+        </div>
+        <div className="embla__slide flex items-center justify-center rounded-lg bg-gradient-to-br from-[#cb2d3e] to-[#ef473a]">
+          <h1 className="font-extrabold text-5xl">
+            <span className="text-blue-">PERFECT</span>
+          </h1>
+        </div>
+      </EmblaCarousel>
     </MaxWidthWrapper>
-  )
-}
+  );
+};

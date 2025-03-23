@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import NavBar from "@/components/layout/NavBar";
 import { Toaster } from "sonner";
+import Footer from "@/components/layout/Footer";
 
 const sora = Sora({ subsets: ["latin"] });
 
@@ -27,7 +28,8 @@ export default function RootLayout({
       >
         <main className="relative flex flex-col min-h-screen z-30">
             <NavBar />
-            <div className="flex-grow flex-1">{children}</div>
+            <div className="flex-grow flex-1 mb-6">{children}</div>
+            <Footer />
         </main>
 
         <Toaster position="top-center" richColors />

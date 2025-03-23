@@ -1,6 +1,5 @@
-'use client';
-
-import useTabStore from "@/stores/tabStore";
+import React from 'react';
+import useTabStore from '@/stores/tabStore';
 
 interface TabsProps {
   categories: string[];
@@ -9,18 +8,16 @@ interface TabsProps {
 export default function Tabs({ categories }: TabsProps) {
   const { activeTab, setActiveTab } = useTabStore();
 
-  if (!categories || categories.length === 0) {
-    return <p className="text-gray-500">No categories available</p>;
-  }
-
   return (
-    <div className="flex space-x-4 my-8 border-b py-2">
-      {categories.map((category, index) => (
+    <div className="flex flex-wrap gap-2 mb-4">
+      {categories.map((category) => (
         <button
-          key={index}
+          key={category}
           onClick={() => setActiveTab(category)}
-          className={`px-4 rounded font-regular text-[14px] ${
-            activeTab === category ? "bg-[#000428] text-gray-50 scale-110 transition-all" : "text-[#000428]"
+          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+            activeTab === category
+              ? 'bg-[#2C5364] text-white'
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
           }`}
         >
           {category}

@@ -2,10 +2,11 @@ import React from "react";
 import MaxWidthWrapper from "../layout/MaxWidthWrapper";
 import { ArrowRight, BoxIcon } from "lucide-react";
 import Link from "next/link";
+import EnrollmentButton from "../EnrollmentButton";
 
 const Services = () => {
   return (
-    <MaxWidthWrapper className="flex flex-col space-y-3 lg:space-y-8 my-12">
+    <MaxWidthWrapper className="flex flex-col space-y-3 lg:space-y-8 my-24">
       <h3>Learn</h3>
       <h1 className=" text-xl lg:text-3xl font-bold">
         Explore Our Comprehensive Course Offerings
@@ -53,7 +54,7 @@ const Services = () => {
       </div>
 
       <div className="flex gap-3 items-center pt-6">
-        <button className="border-black px-3 py-2 border-2 hover:bg-[#2C5364] hover:text-gray-100">Enroll</button>
+        <EnrollmentButton />
         <Link href="/about" className="flex gap-2 hover:underline">
           <p>Learn More</p>
           <ArrowRight />

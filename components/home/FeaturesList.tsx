@@ -2,6 +2,7 @@ import React from "react";
 import MaxWidthWrapper from "../layout/MaxWidthWrapper";
 import Link from "next/link";
 import { ArrowRight, CheckCircle } from "lucide-react";
+import EnrollmentButton from "../EnrollmentButton";
 
 const Invite = () => {
   return (
@@ -31,29 +32,31 @@ const Invite = () => {
         <div className="flex flex-col gap-3">
           <CheckCircle className="mx-auto" />
           <h3 className="font-semibold text-lg lg:text-xl">
-          Learn from Experienced and Qualified Instructors
-        </h3>
-        <p className="text-muted-foreground text-sm lg:text-lg">Our teachers bring industry expertise to your education.</p>
+            Learn from Experienced and Qualified Instructors
+          </h3>
+          <p className="text-muted-foreground text-sm lg:text-lg">
+            Our teachers bring industry expertise to your education.
+          </p>
         </div>
 
-       <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3">
           <CheckCircle className="mx-auto" />
           <h3 className="font-semibold text-lg lg:text-xl">
-          Work on Real-Life Projects to Gain Experience
-        </h3>
-        <p className="text-muted-foreground text-sm lg:text-lg">Apply your skills in practical projects that matter.</p>
+            Work on Real-Life Projects to Gain Experience
+          </h3>
+          <p className="text-muted-foreground text-sm lg:text-lg">
+            Apply your skills in practical projects that matter.
+          </p>
         </div>
         {/* <p className="flex gap-6 lg:gap-1"><span className="text-green-500"><CheckCircle /></span> All classes recorded *</p>
       <p className="flex gap-6 lg:gap-1"><span className="text-green-500"><CheckCircle /></span> 24/7 accessible teachers *</p>
       <p className="flex gap-6 lg:gap-1"><span className="text-green-500"><CheckCircle /></span> Flexible hours and compact classes*</p> */}
       </div>
       <div className="w-1/2 flex gap-3 mx-auto items-center m-12 justify-center">
-        <Link href="/about" className="px-3 py-2 border-2 border-black hover:bg-[#2C5364] hover:text-gray-100">
-          Learn
+        <EnrollmentButton />
+        <Link href="/about" className="flex gap-2 hover:underline">
+          Learn More <ArrowRight />
         </Link>
-        <button className="flex gap-2 hover:underline">
-          Sign Up <ArrowRight />
-        </button>
       </div>
     </MaxWidthWrapper>
   );

@@ -6,8 +6,8 @@ import Image from "next/image";
 
 const NavBar = async () => {
   return (
-    <div className="sticky z-50 top-0 inset-x-0 h-16 bg-[#eefaed]">
-      <header className="relative">
+    <div className="sticky z-50 top-0 inset-x-0 h-16 bg-[#e0dede] bg-opacity-10 backdrop-blur-md w-full md:w-[80vw] rounded-full mx-auto px-3 md:px-0">
+      <nav className="relative">
         <MaxWidthWrapper className="">
             <div className="flex h-16 items-center">
               <div className="flex lg:ml-o">
@@ -19,7 +19,7 @@ const NavBar = async () => {
                 height={50}
                 className="object-cover"
                 />
-                <div className="flex flex-col">
+                <div className="hidden flex-col md:block">
                   <h1 className="font-extrabold text-sm text-[#171c56]">RoyalEcho</h1>
                   <h2 className="text-muted-foreground font-bold text-xs">Academy</h2>
                 </div>
@@ -40,7 +40,7 @@ const NavBar = async () => {
               </div>
             </div>
         </MaxWidthWrapper>
-      </header>
+      </nav>
     </div>
   );
 };

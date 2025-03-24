@@ -153,7 +153,7 @@ export default function Courses() {
 
                 <div className="flex justify-between items-center mt-4">
                   <span className="font-medium text-gray-900">
-                    {course.price > 0 ? `$${course.price.toFixed(2)}` : "Free"}
+                    {course.price > 0 ? `₦${course.price.toFixed(2)}` : "Free"}
                   </span>
                   <span className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded-full">
                     {course.category}

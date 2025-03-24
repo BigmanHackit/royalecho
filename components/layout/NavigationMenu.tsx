@@ -107,8 +107,8 @@ export function NavigationItemsMenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/courses" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+          <Link href="/courses" legacyBehavior passHref className="bg-[#2C5364]">
+            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-[#2C5364] text-white hover:bg-black hover:text-white")}>
               Courses
             </NavigationMenuLink>
           </Link>

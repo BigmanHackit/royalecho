@@ -4,60 +4,85 @@ import { ArrowRight, BoxIcon } from "lucide-react";
 import Link from "next/link";
 import EnrollmentButton from "../EnrollmentButton";
 
-const Services = () => {
+// Define interface for service data
+interface Service {
+  title: string;
+  subtitle: string;
+  description: string;
+}
+
+// ServiceCard component now directly uses Service interface
+const ServiceCard: React.FC<Service> = ({ 
+  title, 
+  subtitle, 
+  description 
+}) => (
+  <div className="flex flex-col space-y-3 md:space-y-4 text-center md:text-left items-center md:items-start">
+    <BoxIcon className="w-10 h-10 text-primary" />
+    <h3 className="font-semibold text-lg md:text-xl">
+      <span className="py-1 px-2 md:py-2 md:px-3 bg-[#2C5364] text-gray-200 font-bold border rounded-tr-lg rounded-bl-lg">
+        {title}
+      </span>
+      &nbsp; {subtitle}
+    </h3>
+    <p className="text-sm md:text-base text-muted-foreground text-center md:text-left">
+      {description}
+    </p>
+  </div>
+);
+
+const Services: React.FC = () => {
+  // Define services with typed array
+  const services: Service[] = [
+    {
+      title: "Web Development",
+      subtitle: "Build Your Future Online",
+      description: "Learn to create stunning websites from scratch."
+    },
+    {
+      title: "Data Science",
+      subtitle: "Unlock the Power of Data",
+      description: "Transform raw data into actionable insights."
+    },
+    {
+      title: "Digital Marketing",
+      subtitle: "Master the Online Landscape",
+      description: "Learn strategies to effectively promote brands online."
+    }
+  ];
+
   return (
-    <MaxWidthWrapper className="flex flex-col space-y-3 lg:space-y-8 my-24">
-      <h3>Learn</h3>
-      <h1 className=" text-xl lg:text-3xl font-bold">
-        Explore Our Comprehensive Course Offerings
-      </h1>
-      <p className="text-muted-foreground">
-        At our academy, we provide a diverse range of courses designed to equip
-        students with essential tech skills. Each course is led by experienced
-        instructors who guide you through both theory and practical
-        applications.
-      </p>
-
-      <div className="flex flex-col gap-8 lg:flex-row lg:gap-4 lg:justify-center pt-6">
-        <div className="flex flex-col space-y-3 lg:space-y-8">
-          <BoxIcon />
-          <h3 className="font-semibold lg:text-xl/loose">
-            <span className="py-2 px-3 bg-[#2C5364] text-gray-200 font-bold border rounded-tr-lg rounded-bl-lg">
-              Web Development
-            </span>
-            &nbsp; Build Your Future Online
-          </h3>
-          <p>Learn to create stunning websites from scratch.</p>
-        </div>
-
-        <div className="flex flex-col space-y-3 lg:space-y-8">
-          <BoxIcon />
-          <h3 className="font-semibold lg:text-xl/loose">
-            <span className="py-2 px-3 bg-[#2C5364] text-gray-200 font-bold border rounded-tr-lg rounded-bl-lg">
-              Data Science
-            </span>
-            &nbsp; Unlock the Power of Data
-          </h3>
-          <p>Transform raw data into actionable insights.</p>
-        </div>
-
-        <div className="flex flex-col space-y-3 lg:space-y-6">
-          <BoxIcon />
-          <h3 className="font-semibold lg:text-xl/loose">
-            <span className="py-2 px-3 bg-[#2C5364] text-gray-200 font-bold border rounded-tr-lg rounded-bl-lg">
-              Digital Marketing
-            </span>
-            &nbsp; Master the Online Landscape
-          </h3>
-          <p>Learn strategies to effectively promote brands online.</p>
-        </div>
+    <MaxWidthWrapper className="py-12 md:py-24">
+      <div className="text-center md:text-left space-y-4 md:space-y-6 mb-8">
+        <h3 className="text-sm md:text-base text-primary">Learn</h3>
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+          Explore Our Comprehensive Course Offerings
+        </h1>
+        <p className="text-sm md:text-base text-muted-foreground max-w-3xl mx-auto md:mx-0">
+          At our academy, we provide a diverse range of courses designed to equip
+          students with essential tech skills. Each course is led by experienced
+          instructors who guide you through both theory and practical
+          applications.
+        </p>
       </div>
 
-      <div className="flex gap-3 items-center pt-6">
-        <EnrollmentButton className="" />
-        <Link href="/about" className="flex gap-2 hover:underline">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8">
+        {services.map((service, index) => (
+          <ServiceCard 
+            key={index} 
+            {...service}
+          />
+        ))}
+      </div>
+
+      <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start items-center">
+        <EnrollmentButton className="w-full md:w-auto" />
+        <Link 
+          href="/about" 
+          className="flex gap-2 hover:underline items-center justify-center w-full md:w-auto"
+        >
           <p>Learn More</p>
-          <ArrowRight />
+          <ArrowRight className="w-5 h-5" />
         </Link>
       </div>
     </MaxWidthWrapper>

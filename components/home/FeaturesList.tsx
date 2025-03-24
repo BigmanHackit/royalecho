@@ -53,7 +53,7 @@ const Invite = () => {
       <p className="flex gap-6 lg:gap-1"><span className="text-green-500"><CheckCircle /></span> Flexible hours and compact classes*</p> */}
       </div>
       <div className="w-1/2 flex gap-3 mx-auto items-center m-12 justify-center">
-        <EnrollmentButton />
+        <EnrollmentButton className="" />
         <Link href="/about" className="flex gap-2 hover:underline">
           Learn More <ArrowRight />
         </Link>

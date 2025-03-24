@@ -69,7 +69,7 @@ export default function PDFDownloader() {
         try {
           const errorData = JSON.parse(errorText);
           errorMessage = errorData.message || errorMessage;
-        } catch (e) {
+        } catch {
           // If parsing fails, use the raw text
           errorMessage = errorText || errorMessage;
         }
@@ -113,7 +113,7 @@ export default function PDFDownloader() {
         try {
           const errorData = JSON.parse(errorText);
           errorMessage = errorData.message || errorMessage;
-        } catch (e) {
+        } catch {
           // If parsing fails, use the raw text
           errorMessage = errorText || errorMessage;
         }

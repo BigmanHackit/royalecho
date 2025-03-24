@@ -11,7 +11,7 @@ import DownloadBrochureButton from "@/components/forms/DownloadButton";
 import { EmblaCarousel } from "@/components/shared/Carousel";
 
 interface Course {
-  _id: string;
+  id: string; // Changed from _id to id
   title: string;
   description: string;
   details: string;
@@ -21,15 +21,10 @@ interface Course {
   hoursPerWeek?: number;
   thumbnail?: {
     type: string;
-    size: number;
-    data: string;
+    data: string; // Removed size which isn't in the returned data
   };
-  brochure?: {
-    type: string;
-    size: number;
-    name: string;
-    data: string;
-  };
+  hasBrochure?: boolean; // Added this field from the returned data
+  brochureFilename?: string; // Added this field from the returned data
   createdAt: string;
   updatedAt: string;
 }

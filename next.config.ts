@@ -1,14 +1,18 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { Configuration as WebpackConfig } from 'webpack';
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
   reactStrictMode: true,
   experimental: {
     serverComponentsExternalPackages: ['mongodb'],
   },
-  webpack: (config, { isServer }) => {
+  webpack: (config: WebpackConfig, { isServer }: { isServer: boolean }) => {
     // Properly handle Node.js modules on the client side
     if (!isServer) {
+      config.resolve = config.resolve || {};
       config.resolve.fallback = {
-        ...config.resolve.fallback,
+        ...(config.resolve.fallback || {}),
         net: false,
         tls: false,
         fs: false,

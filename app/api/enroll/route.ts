@@ -41,18 +41,21 @@ export async function POST(req: NextRequest) {
       { status: 201 }
     );
     
-  } catch (error: any) {
-    // Handle validation errors
-    if (error.errors) {
+  } catch (error: unknown) {
+    // First, safely type check what kind of error we're dealing with
+    if (error && typeof error === 'object' && 'errors' in error) {
+      // This is likely a validation error
+      const validationError = error as { errors: Record<string, string> };
       return NextResponse.json(
-        { message: 'Validation error', errors: error.errors },
+        { message: 'Validation error', errors: validationError.errors },
         { status: 400 }
       );
     }
     
-    // Handle other errors
+    // For other types of errors, safely extract the message
+    const errorMessage = error instanceof Error ? error.message : 'Internal server error';
     return NextResponse.json(
-      { message: error.message || 'Internal server error' },
+      { message: errorMessage },
       { status: 500 }
     );
   }

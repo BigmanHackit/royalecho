@@ -3,12 +3,14 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const reslvedParams = await params
+  const courseId = parseInt(reslvedParams.id, 10);
+
   const { searchParams } = new URL(request.url);
   const filter = searchParams.get("filter");
 
-  const courseId = parseInt(params.id, 10);
   const course = courses.find((course) => course.id === courseId);
 
   if (!course) {

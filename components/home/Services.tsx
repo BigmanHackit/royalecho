@@ -54,7 +54,7 @@ const Services = () => {
       </div>
 
       <div className="flex gap-3 items-center pt-6">
-        <EnrollmentButton />
+        <EnrollmentButton className="" />
         <Link href="/about" className="flex gap-2 hover:underline">
           <p>Learn More</p>
           <ArrowRight />

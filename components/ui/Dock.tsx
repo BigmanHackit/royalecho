@@ -29,6 +29,34 @@ type DockItemProps = {
   magnification: number;
 };
 
+// Define the DockItem component data structure
+interface DockItemData {
+  icon: React.ReactNode;
+  label: React.ReactNode;
+  className?: string;
+  onClick?: () => void;
+}
+
+// Define the DockProps interface
+interface DockProps {
+  items: DockItemData[];
+  className?: string;
+  spring?: SpringOptions;
+  magnification?: number;
+  distance?: number;
+  panelHeight?: number;
+  dockHeight?: number;
+  baseItemSize?: number;
+}
+
+// Create a type for components that can accept isHovered
+interface WithIsHovered {
+  isHovered?: MotionValue<number>;
+}
+
+// Type for React elements that can accept the isHovered prop
+type ReactElementWithIsHovered = React.ReactElement<WithIsHovered>;
+
 function DockItem({
   children,
   className = "",
@@ -74,23 +102,29 @@ function DockItem({
       role="button"
       aria-haspopup="true"
     >
-      {Children.map(children, (child) =>
-        cloneElement(child as React.ReactElement, { isHovered })
-      )}
+      {Children.map(children, (child) => {
+        // Type check to ensure it's a valid React element
+        if (React.isValidElement(child)) {
+          // Cast to ReactElementWithIsHovered and add isHovered prop
+          return cloneElement(child as ReactElementWithIsHovered, { isHovered });
+        }
+        return child;
+      })}
     </motion.div>
   );
 }
 
-type DockLabelProps = {
+interface DockLabelProps extends WithIsHovered {
   className?: string;
   children: React.ReactNode;
-};
+}
 
-function DockLabel({ children, className = "", ...rest }: DockLabelProps) {
-  const { isHovered } = rest as { isHovered: MotionValue<number> };
+function DockLabel({ children, className = "", isHovered }: DockLabelProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    if (!isHovered) return;
+    
     const unsubscribe = isHovered.on("change", (latest) => {
       setIsVisible(latest === 1);
     });
@@ -116,10 +150,10 @@ function DockLabel({ children, className = "", ...rest }: DockLabelProps) {
   );
 }
 
-type DockIconProps = {
+interface DockIconProps extends WithIsHovered {
   className?: string;
   children: React.ReactNode;
-};
+}
 
 function DockIcon({ children, className = "" }: DockIconProps) {
   return (
@@ -155,7 +189,7 @@ export default function Dock({
       className="mx-2 flex max-w-full items-center"
     >
       <motion.div
-        onMouseMove={({ pageX }) => {
+        onMouseMove={({ pageX }: { pageX: number }) => {
           isHovered.set(1);
           mouseX.set(pageX);
         }}
@@ -168,7 +202,7 @@ export default function Dock({
         role="toolbar"
         aria-label="Application dock"
       >
-        {items.map((item, index) => (
+        {items.map((item: DockItemData, index: number) => (
           <DockItem
             key={index}
             onClick={item.onClick}

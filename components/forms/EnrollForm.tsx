@@ -1,6 +1,8 @@
 'use client'
 
+import { ValidationErrorResponse } from '@/lib/types';
 import { EnrollFormSchema } from '@/lib/validation';
+import { ValidationError } from 'next/dist/compiled/amphtml-validator';
 import React, { useState } from 'react';
 
 interface EnrollmentFormData {
@@ -55,13 +57,29 @@ const EnrollmentForm: React.FC = () => {
       EnrollFormSchema.parse(formData);
       setErrors({});
       return true;
-    } catch (error: any) {
+    } catch (error: unknown) {
       const formattedErrors: FormErrors = {};
-      error.errors.forEach((err: any) => {
-        if (err.path && err.path.length > 0) {
-          formattedErrors[err.path[0]] = err.message;
-        }
-      });
+      
+      // Type guard to ensure we're dealing with the expected error structure
+      if (
+        error && 
+        typeof error === 'object' && 
+        'errors' in error && 
+        Array.isArray((error as ValidationErrorResponse).errors)
+      ) {
+        const validationError = error as ValidationErrorResponse;
+        
+        validationError.errors.forEach((err: ValidationError) => {
+          if (err.path && err.path.length > 0) {
+            formattedErrors[err.path[0]] = err.message;
+          }
+        });
+      } else {
+        // Handle unexpected error format
+        console.error('Unexpected error format:', error);
+        formattedErrors['_form'] = 'An unexpected error occurred';
+      }
+      
       setErrors(formattedErrors);
       return false;
     }
@@ -105,9 +123,18 @@ const EnrollmentForm: React.FC = () => {
       
       setSubmitStatus('success');
       setStatusMessage('Enrollment successful! We will contact you shortly.');
-    } catch (error: any) {
-      setSubmitStatus('error');
-      setStatusMessage(error.message || 'An error occurred. Please try again.');
+    } catch (error) {
+      setSubmitStatus('error');// Type guard to safely access error.message
+      let errorMessage = 'An error occurred. Please try again.';
+      if (error instanceof Error) {
+        errorMessage = error.message;
+      } else if (typeof error === 'string') {
+        errorMessage = error;
+      } else if (error && typeof error === 'object' && 'message' in error) {
+        errorMessage = String((error as { message: unknown }).message);
+      }
+      
+      setStatusMessage(errorMessage);
     } finally {
       setIsSubmitting(false);
     }

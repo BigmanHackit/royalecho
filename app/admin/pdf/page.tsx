@@ -1,5 +1,4 @@
 import PDFDownloader from "@/components/forms/BrochureDownload";
-import PDFPreview from "@/components/forms/PDFPreview";
 
 
 export default function PDFViewerPage() {

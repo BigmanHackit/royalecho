@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import PDFDownloadButton from './PDFDownloadButton';
+// import PDFDownloadButton from './PDFDownloadButton';
 
 interface PDFPreviewProps {
   documentId: string;
@@ -20,7 +20,7 @@ type PDFDocument = {
 
 export default function PDFPreview({
   documentId,
-  initialFileName = '',
+  // initialFileName = '',
   showPreviewButton = true,
   previewButtonText = 'Preview',
   previewButtonClass = "bg-blue-100 text-blue-700 py-1 px-3 rounded-md hover:bg-blue-200 transition-colors text-sm"
@@ -49,7 +49,7 @@ export default function PDFPreview({
         try {
           const errorData = JSON.parse(errorText);
           errorMessage = errorData.message || errorMessage;
-        } catch (e) {
+        } catch {
           errorMessage = errorText || errorMessage;
         }
         throw new Error(errorMessage);
@@ -77,7 +77,7 @@ export default function PDFPreview({
   };
 
   // Determine the file name to use (from state or props)
-  const fileName = document?.fileName || initialFileName;
+  // const fileName = document?.fileName || initialFileName;
 
   return (
     <div>
@@ -118,11 +118,11 @@ export default function PDFPreview({
               ></iframe>
             </div>
             <div className="p-4 border-t flex justify-end">
-              <PDFDownloadButton
+              {/* <PDFDownloadButton
                 documentId={documentId}
                 fileName={document.fileName}
                 className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
-              />
+              /> */}
             </div>
           </div>
         </div>

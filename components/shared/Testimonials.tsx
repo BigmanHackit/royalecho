@@ -13,7 +13,7 @@ const Testimonials = () => {
             key={testimonial.id}
             className="embla__slide flex flex-col items-center gap-6 bg-gradient-to-br from-[#0F2027] via-[#203A43] to-[#2C5364] rounded-lg text-gray-100 py-3 lg:py-6"
           >
-            <h2 className="text-center font-semibold">
+            <h2 className="text-center px-3 pt-6">
               &quot;{testimonial.content}&quot;
             </h2>
             <Image

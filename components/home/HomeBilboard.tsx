@@ -6,16 +6,18 @@ import ShinyText from "../ui/ShinyText";
 export const HomeBilboard = () => {
   return (
     <MaxWidthWrapper className="my-8 w-full h-[50vh] bg-black py-2.5 rounded-lg flex md:gap-6 text-gray-100">
-      <div className="w-full flex flex-col justify-center gap-3 text-center lg:text-left">
-  <ShinyText text="Welcome to RoyalEcho Academy!" disabled={false} speed={3} className='custom-class font-extrabold text-5xl' />
-        <h1 className="font-extrabold text-5xl">
-        
-        </h1>
-        <h2>
+      <div className="w-full flex flex-col justify-center gap-2 text-center lg:text-left">
+        <ShinyText
+          text="Welcome to RoyalEcho Academy!"
+          disabled={false}
+          speed={3}
+          className="custom-class font-extrabold text-[2.5em]"
+        />
+        <h2 className="text-[.88em]">
           Welcome to RoyalEcho Academy—where learning goes beyond the classroom!
           We don’t just teach tech; we make you practice and work with
-          real-world projects. Join us and transform from a learner to a job-ready tech
-          professional!{" "}
+          real-world projects. Join us and transform from a learner to a
+          job-ready tech professional!{" "}
         </h2>
       </div>
 

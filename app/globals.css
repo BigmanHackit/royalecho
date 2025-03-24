@@ -85,7 +85,7 @@ body {
 }
 
 .shiny-text {
-  color: #7db8f8cf; /* Adjust this color to change intensity/style */
+  color: #f8d37dcf; /* Adjust this color to change intensity/style */
   background: linear-gradient(
     120deg,
     rgba(255, 255, 255, 0) 40%,

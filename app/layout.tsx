@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import NavBar from "@/components/layout/NavBar";
 import { Toaster } from "sonner";
 import Footer from "@/components/layout/Footer";
+import WhatsAppFloatButton from "@/components/shared/WhatsAppFloatButton";
 
 const sora = Sora({ subsets: ["latin"] });
 
@@ -61,6 +62,8 @@ export default function RootLayout({
         </main>
 
         <Toaster position="top-center" richColors />
+
+        <WhatsAppFloatButton phoneNumber="+234 901 418 7438" />
       </body>
     </html>
   );

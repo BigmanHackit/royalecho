@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   description:
     "Gain valuable skills while earning through real-world projects. Our flexible schedules allow you to learn at your own pace, fitting education into your busy life.",
   icons: {
-    icon: "/icons/logo.jpeg",
+    icon: "https://reacademy.vercel.app/icons/logo.jpeg",
   },
   openGraph: {
     images: [
       {
-        url: '/graph.png',
+        url: 'https://reacademy.vercel.app/graph.png',
         width: 1200,
         height: 630,
         alt: 'RE Academy thumbnail',

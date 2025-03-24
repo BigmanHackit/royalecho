@@ -1,8 +1,9 @@
 import React from "react";
 import MaxWidthWrapper from "../layout/MaxWidthWrapper";
-import { ArrowRight, BoxIcon } from "lucide-react";
-import Link from "next/link";
+// import { ArrowRight, BoxIcon } from "lucide-react";
+// import Link from "next/link";
 import EnrollmentButton from "../EnrollmentButton";
+import { BoxIcon } from "lucide-react";
 
 // Define interface for service data
 interface Service {
@@ -11,16 +12,17 @@ interface Service {
   description: string;
 }
 
-// ServiceCard component now directly uses Service interface
 const ServiceCard: React.FC<Service> = ({ 
   title, 
   subtitle, 
   description 
 }) => (
-  <div className="flex flex-col space-y-3 md:space-y-4 text-center md:text-left items-center md:items-start">
-    <BoxIcon className="w-10 h-10 text-primary" />
+  <div className="flex flex-col space-y-4 text-center md:text-left items-center md:items-start bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-all duration-300 group">
+    <div className="bg-primary/10 p-3 rounded-full mb-2">
+      <BoxIcon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
+    </div>
     <h3 className="font-semibold text-lg md:text-xl">
-      <span className="py-1 px-2 md:py-2 md:px-3 bg-[#2C5364] text-gray-200 font-bold border rounded-tr-lg rounded-bl-lg">
+      <span className="py-1 px-2 bg-[#2C5364] text-gray-200 font-bold border rounded-tr-lg rounded-bl-lg">
         {title}
       </span>
       &nbsp; {subtitle}
@@ -32,7 +34,6 @@ const ServiceCard: React.FC<Service> = ({
 );
 
 const Services: React.FC = () => {
-  // Define services with typed array
   const services: Service[] = [
     {
       title: "Web Development",
@@ -53,9 +54,11 @@ const Services: React.FC = () => {
 
   return (
     <MaxWidthWrapper className="py-12 md:py-24">
-      <div className="text-center md:text-left space-y-4 md:space-y-6 mb-8">
-        <h3 className="text-sm md:text-base text-primary">Learn</h3>
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+      <div className="text-center md:text-left space-y-4 md:space-y-6 mb-12">
+        <h3 className="text-sm md:text-base text-primary font-medium tracking-wide">
+          Our Expertise
+        </h3>
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
           Explore Our Comprehensive Course Offerings
         </h1>
         <p className="text-sm md:text-base text-muted-foreground max-w-3xl mx-auto md:mx-0">
@@ -66,7 +69,7 @@ const Services: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
         {services.map((service, index) => (
           <ServiceCard 
             key={index} 
@@ -77,13 +80,13 @@ const Services: React.FC = () => {
 
       <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start items-center">
         <EnrollmentButton className="w-full md:w-auto" />
-        <Link 
+        {/* <Link 
           href="/about" 
-          className="flex gap-2 hover:underline items-center justify-center w-full md:w-auto"
+          className="flex gap-2 hover:underline items-center justify-center w-full md:w-auto text-primary hover:text-primary/80 transition-colors"
         >
           <p>Learn More</p>
           <ArrowRight className="w-5 h-5" />
-        </Link>
+        </Link> */}
       </div>
     </MaxWidthWrapper>
   );

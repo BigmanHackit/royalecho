@@ -1,7 +1,7 @@
 import React from "react";
 import MaxWidthWrapper from "../layout/MaxWidthWrapper";
-import Link from "next/link";
-import { ArrowRight, CheckCircle } from "lucide-react";
+// import Link from "next/link";
+import {  CheckCircle } from "lucide-react";
 import EnrollmentButton from "../EnrollmentButton";
 
 const Invite = () => {
@@ -54,9 +54,9 @@ const Invite = () => {
       </div>
       <div className="w-1/2 flex gap-3 mx-auto items-center m-12 justify-center">
         <EnrollmentButton className="" />
-        <Link href="/about" className="flex gap-2 hover:underline">
+        {/* <Link href="/about" className="flex gap-2 hover:underline">
           Learn More <ArrowRight />
-        </Link>
+        </Link> */}
       </div>
     </MaxWidthWrapper>
   );

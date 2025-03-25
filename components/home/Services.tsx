@@ -17,7 +17,7 @@ const ServiceCard: React.FC<Service> = ({
   subtitle, 
   description 
 }) => (
-  <div className="flex flex-col space-y-4 text-center md:text-left items-center md:items-start bg-white shadow-lg rounded-xl p-6 hover:shadow-xl transition-all duration-300 group">
+  <div className="flex flex-col space-y-4 text-center md:text-left items-center md:items-start bg-[#ced5d0] shadow-lg rounded-xl p-6 hover:shadow-xl transition-all duration-300 group">
     <div className="bg-primary/10 p-3 rounded-full mb-2">
       <BoxIcon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
     </div>

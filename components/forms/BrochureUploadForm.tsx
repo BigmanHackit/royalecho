@@ -9,7 +9,7 @@ const COURSE_CATEGORIES = [
   'Programming',
   'Design',
   'Web Development',
-  'Business',
+  'Finance',
   'Marketing',
   'Data Science',
 ];

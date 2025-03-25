@@ -34,7 +34,7 @@ const WhatsAppFloatButton: React.FC<WhatsAppFloatButtonProps> = ({
         onClick={handleWhatsAppClick}
         variant="default"
         size="icon"
-        className="bg-[#1ebc58bb] hover:bg-[#f8d37d] text-white rounded-full shadow-lg w-14 h-14"
+        className="bg-[#09b347e8] hover:bg-[#143551] text-white rounded-full shadow-lg w-14 h-14"
       >
         <MessageCircle className="w-8 h-8" />
       </Button>

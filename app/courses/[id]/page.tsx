@@ -108,7 +108,7 @@ export default function CourseDetailsPage({
                 alt={course.title}
                 width={400}
                 height={400}
-                className="object-cover w-full h-[400px] rounded-lg"
+                className="object-cover w-full h-[400px] rounded-lg bg-gradient-to-tl from-[#0f2027ae] via-[#203a43a8] to-[#2c5364b6] p-6"
                 priority
               />
             ) : (

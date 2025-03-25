@@ -155,7 +155,7 @@ export default function Courses() {
                   <span className="font-medium text-gray-900">
                     {course.price > 0 ? `₦${course.price.toFixed(2)}` : "Free"}
                   </span>
-                  <span className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded-full">
+                  <span className="text-xs px-2 py-2 bg-[#2C5364] text-gray-100 font-semibold rounded-full">
                     {course.category}
                   </span>
                 </div>

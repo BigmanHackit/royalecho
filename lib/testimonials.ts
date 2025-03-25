@@ -23,7 +23,7 @@ export const TESTIMONIALS = [
     {
         id: 3,
         name: 'Emmanuel',
-        content: 'TRoyalEcho Academy’s Python course is top-notch! The instructors break down complex concepts in a simple way, and the hands-on exercises really solidified my understanding of coding.',
+        content: 'RoyalEcho Academy’s Python course is top-notch! The instructors break down complex concepts in a simple way, and the hands-on exercises really solidified my understanding of coding.',
         image: '/icons/avatar.png',
         major: 'Python',
     }

@@ -6,7 +6,8 @@ import { TESTIMONIALS } from "@/lib/testimonials";
 
 const Testimonials = () => {
   return (
-    <MaxWidthWrapper className="my-24">
+    <MaxWidthWrapper className="my-16">
+      <h2 className="text-xl font-bold text-center mb-6">What Our Students Say About Us</h2>
       <EmblaCarousel>
         {TESTIMONIALS.map((testimonial) => (
           <div

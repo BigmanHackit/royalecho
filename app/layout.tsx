@@ -46,9 +46,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/icons/logo.jpeg" />
-      </head>
       <body
         className={cn(
           "relative h-full font-sans antialiased bg-gradient-to-r from-[#eefaed] to-[#f2f7fb]",

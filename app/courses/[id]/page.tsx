@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { fetchCourseById } from "@/app/actions";
 import EnrollmentButton from "@/components/EnrollmentButton";
 import MaxWidthWrapper from "@/components/layout/MaxWidthWrapper";
-import { BookAudio, CalendarCheck, Clock10, Video } from "lucide-react";
+import { BookAudio, CalendarCheck, CircleSlash, Clock10, Video } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import DownloadBrochureButton from "@/components/forms/DownloadButton";
@@ -138,6 +138,10 @@ export default function CourseDetailsPage({
             <div className="flex items-center gap-3">
               <BookAudio className="flex-shrink-0" />
               <p>Recording of classes</p>
+            </div>
+            <div className="flex items-center gap-3">
+              <CircleSlash className="flex-shrink-0" />
+              <p>Free Video Resources</p>
             </div>
           </div>
         </div>

@@ -138,7 +138,7 @@ export default function Courses() {
                   fill
                   src={getThumbnailSrc(course.thumbnail)}
                   alt={course.title}
-                  className="object-cover"
+                  className="object-contain"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>

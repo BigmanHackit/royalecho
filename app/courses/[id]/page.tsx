@@ -79,9 +79,6 @@ export default function CourseDetailsPage({
           {/* Course details column */}
           <div className="w-full lg:w-[65%] flex flex-col lg:flex-shrink-0">
             <h1 className="text-3xl font-bold">{course.title}</h1>
-            <p className="mt-6 text-gray-900 break-words">
-              {course.description}
-            </p>
             <div className="mt-4">
               <p className="text-gray-700 whitespace-pre-line break-words">
                 {course.details}

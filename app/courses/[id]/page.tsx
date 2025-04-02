@@ -9,6 +9,7 @@ import Image from "next/image";
 import React from "react";
 import DownloadBrochureButton from "@/components/forms/DownloadButton";
 import { EmblaCarousel } from "@/components/shared/Carousel";
+import Loading from "@/app/loading";
 
 interface Course {
   id: string; // Changed from _id to id
@@ -56,7 +57,7 @@ export default function CourseDetailsPage({
   }, [id]);
 
   if (loading) {
-    return <div className="text-center p-8">Loading course details...</div>;
+    return <div className="flex justify-center items-center h-64"><Loading /></div>;
   }
 
   if (error || !course) {

@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import Tabs from "@/components/Tabs";
+import Loading from "@/app/loading";
 
 interface Course {
   _id: string;
@@ -108,7 +109,7 @@ export default function Courses() {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-64">
-        <p className="text-center text-gray-500">Loading courses...</p>
+        <Loading />
       </div>
     );
   }

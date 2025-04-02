@@ -8,7 +8,7 @@ import Image from 'next/image';
 const COURSE_CATEGORIES = [
   'Programming',
   'Design',
-  'Web Development',
+  'Web',
   'Finance',
   'Marketing',
   'Data Science',
